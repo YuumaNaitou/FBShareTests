@@ -67,7 +67,7 @@ public class MainUI : MonoBehaviour {
 	}
 
 	void OnLoginComplete(FBResult result) {
-		loggedIn = result.Error == null;
+		loggedIn = FB.IsLoggedIn;
 	}
 
 	void OpenPostFeedDialog() {
