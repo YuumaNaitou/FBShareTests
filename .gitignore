@@ -1,3 +1,9 @@
+
+# project specific
+unity/FBShareTest/ProjectSettings/EditorBuildSettings.asset
+unity/FBShareTest/ProjectSettings/ProjectSettings.asset
+
+
 # Xcode
 build/*
 *.pbxuser
@@ -23,6 +29,7 @@ profile
 *.pidb
 *.sln
 *.exe
+
 
 # Mac
 .DS_Store

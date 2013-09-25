@@ -50,10 +50,15 @@ public class MainUI : MonoBehaviour {
 
 			GUILayout.BeginHorizontal ();
 			GUILayout.FlexibleSpace ();
-			if(loggedIn) {
-				if(GUILayout.Button("Share on Facebook", GUILayout.Width(350), GUILayout.Height(100))) {
+			if (loggedIn) {
+				if (GUILayout.Button ("Share on Facebook", GUILayout.Width (350), GUILayout.Height (100))) {
 					OpenPostFeedDialog ();
 				}
+			} else {
+				if (GUILayout.Button ("pending", GUILayout.Width (350), GUILayout.Height (100))) {
+					OgPost ();
+				}
+
 			}
 			GUILayout.FlexibleSpace ();
 			GUILayout.EndHorizontal ();
@@ -82,5 +87,41 @@ public class MainUI : MonoBehaviour {
 		string actionLink = "";
 		string reference = "";
 		FB.Feed (toId, link, linkName, linkCaption, linkDescription, picture, mediaSource, actionName, actionLink, reference);
+	}
+
+	void OgPost() {
+
+		string message = "hi from SP";
+		string title = "rocking post";
+		string[] topeople = new string[1];
+		topeople[0] = "100002337990053";
+
+//		string message, 
+//		string[] to = null,
+//		string filters = "",
+//		string[] excludeIds = null,
+//		int? maxRecipients = null,
+//		string data = "", 
+//		string title = "", 
+//		FacebookDelegate callback = null
+
+		FB.AppRequest (
+				message, 
+				topeople,
+				"",
+				null,
+				null,
+				"", 
+				"", 
+				null
+		);
+
+//		FB.API(
+//			"me/APPNAMESPACE:action",
+//			"http:POST",
+//			callback,
+//			FORMDATA
+//
+//			)
 	}
 }
